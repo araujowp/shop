@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../models/product.dart';
-import '../providers/counter_provider.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
 
@@ -18,14 +17,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       ),
       body: Column(
         children: [
-          Text(CounterProvider.of(context).state.value.toString()),
           ElevatedButton(
             child: Text('+'),
             onPressed: (){
-              setState(() {
-                CounterProvider.of(context).state.inc();
-              });
-              print(CounterProvider.of(context).state.value);
+              print('apertei o botão');
             }
             ), 
         ],
