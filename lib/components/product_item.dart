@@ -52,9 +52,9 @@ class ProductItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                ).then((value) {
+                ).then((value) async {
                   if (value ?? false) {
-                    Provider.of<ProductList>(
+                    await Provider.of<ProductList>(
                       context,
                       listen: false,
                     ).removeProduct(product);
