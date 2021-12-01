@@ -38,7 +38,7 @@ class ProductItem extends StatelessWidget {
             onPressed: (){},
           ),
           title: Text(
-            product.title,
+            product.name,
             textAlign: TextAlign.center,
           ),
           trailing: IconButton(
