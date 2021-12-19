@@ -8,7 +8,7 @@ class CounterState{
   int get value => _value;
 
   bool diff(CounterState old){
-    return old == null || old.value != _value;
+    return old.value != _value;
   }
 }
 
