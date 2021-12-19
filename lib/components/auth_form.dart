@@ -42,7 +42,7 @@ class _AuthFormState extends State<AuthForm> with SingleTickerProviderStateMixin
       ).animate(
         CurvedAnimation(parent: _animationController!, curve: Curves.linear)
       );
-      _animationController?.addListener(() =>{ setState((){})});
+      //_animationController?.addListener(() =>{ setState((){})});
     }
 
   @override
@@ -122,12 +122,16 @@ class _AuthFormState extends State<AuthForm> with SingleTickerProviderStateMixin
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Container(
+      child: AnimatedBuilder(
+        animation: _heightAnimation!,
+        builder: (ctx,childForm) => Container(
         padding: const EdgeInsets.all(16),
         //height: _isLogin() ? 310 : 400,
         height: _heightAnimation?.value.height ?? (_isLogin() ? 310 : 400),
         width: deviceSize.width * 0.75,
-        child: Form(
+        child: childForm
+      ),
+      child: Form(
           key: _formKey,
           child: Column(
             children: [
